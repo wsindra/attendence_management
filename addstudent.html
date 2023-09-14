@@ -1,0 +1,20 @@
+{% extends 'navbar.html'%}
+{% block body %}
+{% load static %}
+<table align="center">
+    <h1 align="center">Add Student</h1>
+    <form method="post">
+        {% csrf_token %}
+        <tr>
+            <td align="right">Student Name:</td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="addstudent"></td>
+        </tr>
+        {{msg}}
+    </form>
+    </table>
+</body>
+{% endblock %}
+

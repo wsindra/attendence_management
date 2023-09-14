@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<div class="container">
+<h1 align="center">head of the institution registration here </h1>
+<table class="table">
+  <form action="read" method="post">
+      {% csrf_token %}
+    <tr>
+      <td align="right">UserName:</td>
+      <td><input type="text"  id="tbname" name="tbname"></td>
+    </tr>
+    <tr>
+      <td align="right">Mail:</td>
+      <td><input type="text"  id="tbemail" name="tbemail"></td>
+    </tr>
+    <tr>
+      <td align="right">Password:</td>
+      <td><input type="password"  id="tbpswrd" name="tbpswrd"></td>
+    </tr>
+        <tr>
+          <td><input type="submit" value="register"></td>
+        </tr>
+
+  </form>
+</table>
+    </div>
+{% endblock %}

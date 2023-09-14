@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+{% block body %}
+<div class="container">
+    <link rel="stylesheet" href="indra.css">
+
+<h1 align="center">students status</h1>
+<table class="table">
+    <form action="attendencelist" method="post">
+        <tr>
+            <th>id</th>
+            <th>Date</th>
+            <th>Student_Name</th>
+            <th>Status</th>
+        </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.student.name }}</td>
+                <td>{{ i.status }}</td>
+            </tr>
+            {% endfor %}
+            </form>
+    </table>
+    </div>
+{% endblock %}
