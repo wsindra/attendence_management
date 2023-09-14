@@ -1,22 +1,20 @@
-"""attendenceproject URL Configuration
+from django.urls import path
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
+from attendenceapp import views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('attendenceapp.urls'))
+urlpatterns=[
+    path('',views.log_fun,name='log'),
+    path('logindata', views.logdata_fun),
+    path('Reg',views.reg_fun,name='Reg'),
+    path('read',views.regdata_fun),
+    path('log',views.log_fun,name='log_fun'),
+    path('home', views.home_fun, name='home'),
+    path('addstudent', views.add_student, name='addstudent'),
+    path('studentlist',views.studentlist,name='studentlist'),
+    path('markattendence', views.mark_attendance, name='markattendence'),
+    path('attendencelist', views.attendance_list, name='attendencelist'),
+    path('delete/<int:id>',views.delete_fun,name='delete'),
+    path('log_out',views.log_out_fun,name='log_out')
+
 ]
+
